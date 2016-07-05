@@ -1,7 +1,6 @@
 import { bootstrap } from 'angular2/platform/browser';
 import { Component } from 'angular2/core';
 
-
 @Component({
     selector: 'reddit-article',
     host: {
@@ -20,12 +19,12 @@ import { Component } from 'angular2/core';
             <a class="ui large header" href="{{ link }}">{{ title }}</a>
             <ul class="ui big horizontal list voters" >
                 <li class="item" >
-                    <a href="#" (click)="voteUp()">
+                    <a href (click)="voteUp()">
                         <i class="arrow up icon" ></i>upvote
                     </a>
                 </li>
                 <li class="item" >
-                    <a href="#" (click)="voteDown()">
+                    <a href (click)="voteDown()">
                         <i class="arrow down icon" ></i>downvote
                     </a>
                 </li>
@@ -46,10 +45,12 @@ class ArticleComponent {
 
     voteUp() {
         this.votes += 1;
+        return false;
     }
 
     voteDown() {
         this.votes -= 1;
+        return false;
     }
 }
 
