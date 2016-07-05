@@ -49,12 +49,12 @@ class RedditApp {
             <a class="ui large header" href="{{ link }}">{{ title }}</a>
             <ul class="ui big horizontal list voters" >
                 <li class="item" >
-                    <a href="#">
+                    <a href="#" (click)="voteUp()">
                         <i class="arrow up icon" ></i>upvote
                     </a>
                 </li>
                 <li class="item" >
-                    <a href>
+                    <a href="#" (click)="voteDown()">
                         <i class="arrow down icon" ></i>downvote
                     </a>
                 </li>
@@ -71,6 +71,14 @@ class ArticleComponent {
         this.title = 'Angular 2';
         this.link = 'http://angular.io';
         this.votes = 10;
+    }
+
+    voteUp() {
+        this.votes += 1;
+    }
+
+    voteDown() {
+        this.votes -= 1;
     }
 }
 
