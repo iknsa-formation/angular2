@@ -18,6 +18,10 @@ template: `
             Submit link
         </button>
     </form>
+
+    <div class="ui grid posts">
+        <reddit-article></reddit-article>
+    </div>
 `
 })
 class RedditApp {
@@ -26,4 +30,40 @@ class RedditApp {
     }
 }
 
+
+@Component({
+    selector: 'reddit-article',
+    host: {
+        class: 'row'
+    },
+    template: `
+        <div class="four wide column center aligned votes" >
+            <div class="ui statistic" >
+                <div class="value" >
+                    2
+                </div>
+                <div class="label" >Points</div>
+            </div>
+        </div>
+        <div class="twelve wide column" >
+            <a class="ui large header" href="#" >Love angular 2</a>
+            <ul class="ui big horizontal list voters" >
+                <li class="item" >
+                    <a href="#">
+                        <i class="arrow up icon" ></i>upvote
+                    </a>
+                </li>
+                <li class="item" >
+                    <a href>
+                        <i class="arrow down icon" ></i>downvote
+                    </a>
+                </li>
+            </ul>
+        </div>
+    `
+})
+class ArticleComponent {
+}
+
 bootstrap(RedditApp);
+bootstrap(ArticleComponent);
