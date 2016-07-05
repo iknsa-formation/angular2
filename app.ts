@@ -40,13 +40,13 @@ class RedditApp {
         <div class="four wide column center aligned votes" >
             <div class="ui statistic" >
                 <div class="value" >
-                    2
+                    {{ votes }}
                 </div>
                 <div class="label" >Points</div>
             </div>
         </div>
         <div class="twelve wide column" >
-            <a class="ui large header" href="#" >Love angular 2</a>
+            <a class="ui large header" href="{{ link }}">{{ title }}</a>
             <ul class="ui big horizontal list voters" >
                 <li class="item" >
                     <a href="#">
@@ -63,6 +63,15 @@ class RedditApp {
     `
 })
 class ArticleComponent {
+    votes: number;
+    title: string;
+    link: string;
+
+    constructor() {
+        this.title = 'Angular 2';
+        this.link = 'http://angular.io';
+        this.votes = 10;
+    }
 }
 
 bootstrap(RedditApp);
