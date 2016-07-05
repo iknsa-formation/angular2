@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>iKNSA ng2 course</title>
-    <link rel="stylesheet" type="text/css" href="ressources/vendor/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/vendor/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 
     <!-- import des fichiers javascript -->
@@ -26,6 +26,25 @@
     System.import('app.js')
         .then(null, console.error.bind(console));
 </script>
+
+    <!-- Menu Bar -->
+    <div class="ui menu">
+      <div class="ui container">
+        <a href="#" class="header item">
+          <img class="logo" src="">
+          iKNSA
+        </a>
+        <div class="header item borderless">
+          <h1 class="ui header">
+            Angular 2 Reddit
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui main text container">
+      <reddit></reddit> <!-- Our app loads here! -->
+    </div>
 
 </body>
 </html>
