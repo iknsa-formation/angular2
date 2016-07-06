@@ -11,6 +11,14 @@ class Article {
         this.link = link;
         this.votes = votes || 0;
     }
+
+    voteUp(): void {
+        this.votes += 1;
+    }
+
+    voteDown(): void {
+        this.votes -= 1;
+    }
 }
 
 @Component({
@@ -52,12 +60,12 @@ class ArticleComponent {
     }
 
     voteUp(): boolean {
-        this.article.votes += 1;
+        this.article.voteUp();
         return false;
     }
 
     voteDown(): boolean {
-        this.article.votes -= 1;
+        this.article.voteDown();
         return false;
     }
 }
